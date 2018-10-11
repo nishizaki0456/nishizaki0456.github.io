@@ -14,6 +14,11 @@
     // stop waiting.
     ext.wait_random = function(callback) {
         
+        var connection = new WebSocket('ws://IPAddress:Port');
+
+        connection.onopen = function () {
+        connection.send('Ping'); // Send the message 'Ping' to the server
+        };
         wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
         window.setTimeout(function() {
@@ -24,7 +29,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['w', 'await for random time', 'wait_random'],
+            ['w', 'wait for random time', 'wait_random'],
         ]
     };
 
