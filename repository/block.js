@@ -17,7 +17,7 @@
         var connection = new WebSocket('ws://192.168.250.110:30002');
 
         connection.onopen = function () {
-            connection.send("movej([0,-1.57, 0,"+ str(0) +","+  str(PI/2) + ","+ str(PI/2)+ " ], a=1.39 , v=1.04)" + "\n"); 
+            connection.send("movej(p[0.4, 0.4, 0.1 ,0.0 ,3.14159, 0.0] , a=0.03 , v=0.05)");
         };
         wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
