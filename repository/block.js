@@ -1,4 +1,5 @@
 (function(ext) {
+    
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -12,6 +13,7 @@
     // final argument. This should be called to indicate that the block can
     // stop waiting.
     ext.wait_random = function(callback) {
+        
         wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
         window.setTimeout(function() {
@@ -22,7 +24,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['w', 'wait for random time', 'wait_random'],
+            ['w', 'await for random time', 'wait_random'],
         ]
     };
 
