@@ -17,7 +17,7 @@
         var connection = new WebSocket('ws://192.168.250.110:30002');
 
         connection.onopen = function () {
-        connection.send('s.send(toBytes("movej([0,-1.57, 0,"+ str(0) +","+  str(PI/2) + ","+ str(PI/2)+ " ], a=1.39 , v=1.04)" + "\n"))'); // Send the message 'Ping' to the server
+        connection.send('toBytes("movej([0,-1.57, 0,"+ str(0) +","+  str(PI/2) + ","+ str(PI/2)+ " ], a=1.39 , v=1.04)" + "\n")'); // Send the message 'Ping' to the server
         };
         wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
