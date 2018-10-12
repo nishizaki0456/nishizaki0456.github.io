@@ -1,4 +1,5 @@
 (function(ext) {
+    
     // Cleanup function when the extension is unloaded
     ext._shutdown = function() {};
 
@@ -12,6 +13,12 @@
     // final argument. This should be called to indicate that the block can
     // stop waiting.
     ext.wait_random = function(callback) {
+        
+        var connection = new WebSocket('ws://192.168.250.110:30002');
+
+        connection.onopen = function () {
+            connection.send("movej(p[0.4, 0.4, 0.1 ,0.0 ,3.14159, 0.0] , a=0.03 , v=0.05)");
+        };
         wait = Math.random();
         console.log('Waiting for ' + wait + ' seconds');
         window.setTimeout(function() {
